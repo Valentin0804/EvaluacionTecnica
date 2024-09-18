@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'E:\Users\Valen\Desktop\Valentin\Prueba Tecnica\biblioteca\static\biblioteca_app\css\styles.css' %}">
+        <title>shelf detail</title>
+        
+    </head>
+
+    <body>
+        <div class="container">
+                <h1>Estante Detalle</h1>
+            <p>Cantidad de libros: {{ book_count }}</p>
+            <p>Porcentaje de llenado: {{ fill_percentage }}%</p>
+            <p>Valor total de la s: ${{ total_value }}</p>
+            <p>Libro más caro: {{ most_expensive_book.name }} - ${{ most_expensive_book.price }}</p>
+            
+            <h2>Libros en el estante (ordenados alfabéticamente):</h2>
+            <ul>
+                {% for book in books_ordered %}
+                    <li>{{ book.name }} - {{ book.author }} - {{ book.genre }} - ${{ book.price }}</li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'home' %}"  class="button" >Volver a Inicio</a>
+        </div>
+        
+    </body>
+</html>

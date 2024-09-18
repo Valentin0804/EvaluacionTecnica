@@ -1,0 +1,61 @@
+<!-- biblioteca_app/templates/home.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'E:\Users\Valen\Desktop\Valentin\Prueba Tecnica\biblioteca\static\biblioteca_app\css\styles.css' %}">
+        <script src="{% static 'E:\Users\Valen\Desktop\Valentin\Prueba Tecnica\biblioteca\static\biblioteca_app\js\filterBooks.js' %}"></script>
+        <title>Home</title>
+        
+    </head>
+    <body>
+        <div class="container">
+            <h1>Bienvenido a la Biblioteca</h1>
+
+            <div class="button-container">
+                <form action="{% url 'shelf_detail' 1 %}" method="get">
+                    <button type="submit">Ver datos de estante A</button>
+                </form>
+                <form action="{% url 'shelf_detail' 2 %}" method="get">
+                    <button type="submit">Ver datos de estante B</button>
+                </form>
+                <form action="{% url 'shelf_detail' 3 %}" method="get">
+                    <button type="submit">Ver datos de estante C</button>
+                </form>
+                <form action="{% url 'shelf_detail' 4 %}" method="get">
+                    <button type="submit">Ver datos de estante D</button>
+                </form>
+
+                <div class="filter-section">
+                    <h2>Filtrar Libros por Estantería y Género</h2>
+                    <form id="filterForm">
+                        <label for="shelf">Seleccionar Estantería:</label>
+                        <select id="shelf" name="shelf">
+                            <option value="1">Estante A</option>
+                            <option value="2">Estante B</option>
+                            <option value="3">Estante C</option>
+                            <option value="4">Estante D</option>
+                        </select>
+
+                        <label for="genre">Seleccionar Género:</label>
+                        <select id="genre" name="genre">
+                            <option value="Fantasía">Fantasía</option>
+                            <option value="Aventura">Aventura</option>
+                            <option value="Realismo Mágico">Realismo Mágico</option>
+                            <option value="Novela Clásica">Novela Clásica</option>
+                        </select>
+
+                        <button id="filterButton" type="submit">Filtrar Libros</button>
+
+                    </form>
+
+                    <div id="booksDisplay">
+                        
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </body>
+</html>
