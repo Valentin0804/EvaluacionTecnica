@@ -1,41 +1,38 @@
 # -- EJERCICIO 1 --
 lista = [1,10,6,8,15,2] 
+print(lista)
 
-# -- 1.A -- 
+# -- EJERCICIO 1.A -- 
 mayor_1 = 0
+posicion_1 = 0
 
-for elemento in lista:
-    if mayor_1 < elemento:
-        mayor_1 = elemento
+for i in range(1, len(lista)):
+    if mayor_1 < lista[i]:
+        mayor_1 = lista[i]
+        posicion_1  = i
 
-print(mayor_1)
+print("El mayor es:", mayor_1)
+print("La posición del mayor es:", posicion_1 )
 
-# -- 1.B --
+# -- EJERCICIO 1.B --
 mayor_2 = max(lista)
+posicion_2 = lista.index(mayor_2)
 
-print(mayor_2)
+print("El mayor es:", mayor_2)
+print("La posición del mayor es:", posicion_2)
 
-# -- 2 --
+# -- EJERCICIO 2 --
 
-# -- V.1 --
 lista_ordenada = sorted(lista)
 print(lista_ordenada)
 
-# -- V.2 --
+# -- EJERCICIO 3 --
+
 n = len(lista)
-
-for i in range(n):
-    for j in range(0, n-i-1):
-        if lista[j] > lista[j+1]:
-            lista[j], lista[j+1] = lista[j+1], lista[j]
-
-print(lista)
-
-# -- 3 --
 lista_par = []
 for i in range(n):
     if ((lista[i]%2)== 0):
-        print('Número par: ',lista[i],'Posicion del número: ', i)
+        print('Número par: ',lista[i],' en posicion de la coleccion: ', i)
         # -- 4 --
         lista_par.append(lista[i])
 

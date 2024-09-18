@@ -6,6 +6,9 @@ def count_books_on_shelf(shelf_id): # Libros por estante
 
 def calculate_shelf_fill_percentage(shelf_id): # Porcentaje de lleno
     shelf = Shelf.objects.get(id=shelf_id)
+    if shelf.max_capacity == 0:
+        print("Advertencia: La capacidad máxima del estante es 0.")
+        return 0
     return (shelf.books.count() / shelf.max_capacity) * 100
 
 def calculate_total_shelf_value(shelf_id): # Precio total de libro
